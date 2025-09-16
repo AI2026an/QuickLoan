@@ -1,0 +1,63 @@
+
+  // VS Code Tasks to run Vite dev server accessible from your phone over LAN.
+  // Pick the task matching your package manager.
+  // Then open http://YOUR_COMPUTER_LAN_IP:5173 on your phone.
+
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev:vite:pnpm",
+      "type": "shell",
+      "command": "pnpm",
+      "args": [
+        "dev",
+        "--",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "5173"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "dev:vite:npm",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev",
+        "--",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "5173"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "dev:vite:yarn",
+      "type": "shell",
+      "command": "yarn",
+      "args": [
+        "dev",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "5173"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}
