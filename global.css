@@ -1,0 +1,131 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Dark base with vibrant accents */
+    --background: 220 8% 6%; /* smooth black */
+    --foreground: 220 8% 96%; /* light text */
+
+    --card: 220 8% 8%; /* slightly lighter than background */
+    --card-foreground: 220 8% 96%;
+
+    --popover: 220 8% 7%;
+    --popover-foreground: 220 8% 96%;
+
+    /* Primary: deep purple-blue */
+    --primary: 255 85% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: warm yellow accent */
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 220 8% 6%;
+
+    --muted: 220 8% 30%;
+    --muted-foreground: 220 8% 70%;
+
+    --accent: 260 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 8% 12%;
+    --input: 220 8% 12%;
+    --ring: 255 85% 50%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar designed as warm yellow panel on desktop */
+    --sidebar-background: 45 100% 45%;
+    --sidebar-foreground: 220 8% 6%;
+    --sidebar-primary: 255 85% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 80% 70%;
+    --sidebar-accent-foreground: 220 8% 6%;
+    --sidebar-border: 45 100% 35%;
+    --sidebar-ring: 255 85% 50%;
+  }
+
+  .dark {
+    --background: 255 10% 8%;
+    --foreground: 220 8% 96%;
+
+    --card: 255 10% 6%;
+    --card-foreground: 220 8% 96%;
+
+    --popover: 255 10% 6%;
+    --popover-foreground: 220 8% 96%;
+
+    --primary: 260 90% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 10% 12%;
+    --muted-foreground: 215 10% 70%;
+
+    --accent: 260 80% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 255 10% 12%;
+    --input: 255 10% 12%;
+    --ring: 260 90% 60%;
+
+    --sidebar-background: 255 10% 6%;
+    --sidebar-foreground: 220 8% 96%;
+    --sidebar-primary: 260 90% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 80% 30%;
+    --sidebar-accent-foreground: 220 8% 96%;
+    --sidebar-border: 255 10% 12%;
+    --sidebar-ring: 260 90% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .brand-hero {
+    /* subtle background glow using primary and accent */
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.06), hsl(var(--accent) / 0.03));
+  }
+
+  .brand-hero-strong {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .brand-card {
+    background: hsl(var(--card));
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    color: hsl(var(--primary-foreground));
+  }
+}
