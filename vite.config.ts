@@ -6,12 +6,12 @@ import path from "path";
 export default defineConfig({
   server: {
     host: "::",
-    port: 5173
+    port: 5173,
   },
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, ".")
+      "@": path.resolve(__dirname, "."),
     },
   },
 });
